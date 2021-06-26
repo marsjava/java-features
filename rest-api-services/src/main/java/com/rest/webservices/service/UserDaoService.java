@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.jws.soap.SOAPBinding;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 @Component
 public class UserDaoService {
@@ -29,6 +30,17 @@ public class UserDaoService {
     public User findOne(int id){
         for(User user: userList) {
             if(user.getId() == id){
+                return user;
+            }
+        }
+        return null;
+    }
+    public User deleteOne(int id){
+        Iterator<User> it = userList.iterator();
+        while(it.hasNext()) {
+            User user = it.next();
+            if(user.getId() == id){
+                it.remove();
                 return user;
             }
         }
