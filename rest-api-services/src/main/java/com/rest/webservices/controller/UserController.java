@@ -5,9 +5,11 @@ import com.rest.webservices.model.User;
 import com.rest.webservices.service.UserDaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -39,7 +41,7 @@ public class UserController {
     }
 
     @PostMapping("/users")
-    public ResponseEntity<Object> saveUser(@RequestBody User user){
+    public ResponseEntity<Object> saveUser(@Valid @RequestBody User user){
         User savedUser = service.createUser(user);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
