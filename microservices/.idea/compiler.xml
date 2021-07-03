@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
+        <module name="currency-exchange-service" />
+        <module name="currency-conversion-service" />
+        <module name="eureka-naming-server" />
+        <module name="spring-cloud-config-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="1.5" />
+      <module name="currency-conversion-service" target="1.5" />
+      <module name="currency-exchange-service" target="1.5" />
+      <module name="eureka-naming-server" target="1.5" />
+      <module name="spring-cloud-config-server" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
